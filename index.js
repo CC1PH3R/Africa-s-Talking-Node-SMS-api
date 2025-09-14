@@ -9,11 +9,9 @@ const { sms } = require('./atClient');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 /* SMS Endpoint */ 
-app.post('/sms/send', async (req, res) => {
+app.post('/sms/send', express.json(), async (req, res) => {
     try {
         const { to, message } = req.body;
         const response = await sms.send({
@@ -38,7 +36,7 @@ app.get('/test', (req, res) => {
 });
 
 /* Delivery Callback*/
-app.post('/callback', (req, res) => {
+app.post('/callback', express.urlencoded({ extended: true }), (req, res) => {
     console.log('[DR] raw callback body ->', req.body);
     res.status(200).json({
         status: "success",
