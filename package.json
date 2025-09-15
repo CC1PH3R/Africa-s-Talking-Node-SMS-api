@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A sanbox to play with Africa's Talking SMS apis",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js"
   },
@@ -16,6 +17,8 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@prisma/client": "^5.22.0",
+    "nodemon": "^3.1.10",
+    "prisma": "^5.22.0"
   }
 }
