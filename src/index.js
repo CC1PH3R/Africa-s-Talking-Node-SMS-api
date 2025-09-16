@@ -2,8 +2,8 @@ import dotenv from 'dotenv';
 import express, { json, urlencoded } from 'express';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
-import { sms } from './atClient.js';
-import { publish } from './eventBus.js';
+import { sms } from './services/atClient.js';
+import { publish } from './services/eventBus.js';
 //console.log('sms object:', sms);
 //console.log('sms.send type:', typeof sms.send);
 
